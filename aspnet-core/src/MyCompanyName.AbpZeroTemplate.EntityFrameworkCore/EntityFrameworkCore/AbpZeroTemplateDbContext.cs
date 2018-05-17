@@ -75,6 +75,14 @@ namespace MyCompanyName.AbpZeroTemplate.EntityFrameworkCore
             });
 
             modelBuilder.ConfigurePersistedGrantEntity();
+
+
+            CoreModelCreating(modelBuilder);
+        }
+
+        private void CoreModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ChangeAbpTablePrefix<Tenant, Role, User>("Core_");
         }
     }
 }
